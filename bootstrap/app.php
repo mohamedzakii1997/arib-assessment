@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\AuthenticateEmployeeWeb;
+use App\Http\Middleware\AuthenticateManagerWeb;
 use App\Http\Middleware\EmployeeMiddleware;
 use App\Http\Middleware\ManagerMiddleware;
 use Illuminate\Foundation\Application;
@@ -19,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
     $middleware->alias([
         'manager'=> ManagerMiddleware::class,
         'employee'=> EmployeeMiddleware::class,
+        'AuthenticateManagerWeb'=>AuthenticateManagerWeb::class,
+        'AuthenticateEmployeeWeb'=>AuthenticateEmployeeWeb::class
     ]);
 
 

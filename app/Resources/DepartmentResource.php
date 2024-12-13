@@ -22,6 +22,7 @@ class DepartmentResource extends JsonResource
             'id'=>$this->id,
             'name'=>$this->name,
             'manager_name'=>$this->manager?$this->manager->full_name:'No Manager',
+            'manager_id'=>$this->manager_id,
             'employees_count' => $this->employees->count(),
             'sum_of_salaries' => $this->employees->sum('salary'),
 

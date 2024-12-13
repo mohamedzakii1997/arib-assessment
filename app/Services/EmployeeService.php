@@ -26,10 +26,12 @@ class EmployeeService extends LaravelServiceClass
 
     }
 
-    public function index()
+    public function index($web = null)
     {
         if (!request()->has('get_free_managers') && request()->get_free_managers == 1 )
         $conditions = ['department_id'=>auth()->user()->managedDepartment->id];
+        elseif ($web)
+            $conditions = ['department_id'=>auth()->user()->managedDepartment->id];
         else
             $conditions = [];
 
@@ -53,7 +55,9 @@ class EmployeeService extends LaravelServiceClass
             $validatedData = $request->validated();
             $validatedDataWithoutFile = Arr::except($validatedData, ['image']);
 
-
+            if (isset($validatedData['department_id']) && $validatedData['department_id'] != null && $validatedData['role'] == 'manager'){
+                $validatedDataWithoutFile = Arr::except($validatedData, ['department_id']);
+            }
 
             $emp = $this->employee_repo->create($validatedDataWithoutFile);
 
@@ -83,17 +87,24 @@ class EmployeeService extends LaravelServiceClass
 
     public function update($id, $request = null)
     {
-
+       // dd($request->all());
         return    DB::transaction(function() use($request, $id) {
 
             $validatedData = $request->validated();
             $validatedDataWithoutFile = Arr::except($validatedData, ['image']);
 
+            if (isset($validatedData['department_id']) && $validatedData['department_id'] != null && $validatedData['role'] == 'manager'){
+                $validatedDataWithoutFile = Arr::except($validatedData, ['department_id']);
+            }
+
             $emp = $this->employee_repo->update($id, $validatedDataWithoutFile);
 
             if(isset($request->image)) {
 
-                $this->removeImageFromStorage($emp);
+                if ($emp->image != null){
+                    $this->removeImageFromStorage($emp);
+                }
+
                 $this->handleUploadMainImage($request->image, $emp->id);
             }
 

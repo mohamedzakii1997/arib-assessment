@@ -16,14 +16,25 @@ class LoginUserRequest extends FormRequest
     public function rules()
     {
         return [
-
             'login' => [
                 'required',
                 'string',
                 function ($attribute, $value, $fail) {
-                    // Check if the input is a valid email
+                    // Check if the input is a valid email or phone
                     if (!filter_var($value, FILTER_VALIDATE_EMAIL) && !preg_match('/^\+?[0-9]{10,15}$/', $value)) {
                         return $fail('The ' . $attribute . ' must be a valid email or phone number.');
+                    }
+
+                    // Check if the email or phone exists in the users table
+                    $exists = \DB::table('users')
+                        ->where(function ($query) use ($value) {
+                            $query->where('email', $value)
+                                ->orWhere('phone', $value);
+                        })
+                        ->exists();
+
+                    if (!$exists) {
+                        return $fail('The ' . $attribute . ' does not exist in our records.');
                     }
                 }
             ],

@@ -50,7 +50,16 @@ class EmployeeRequest extends FormRequest
         return true;
     }
 
+    public function messages()
+    {
+        return [
+            'password.required' => 'Password is required.',
+            'password.min' => 'Password must be at least 8 characters.',
+            'password.regex' => 'Password must contain at least one letter and one number.',
 
-
-
+        ];
+    }
 }
+
+
+

@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Cairo';
+    src: url('Cairo-Bold.ttf');
+}
+*,
+        body,
+        html {
+            font-family: 'Cairo', sans-serif !important;
+        }
+        .fa, .far, .fas {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+}
+.la{
+    font-family: 'LineAwesome' !important;
+}
+.fab{
+  font-family: "Font Awesome 5 Brands" !important;
+}
+th,td,tr,thead,tbody{
+    text-align: center !important;
+    vertical-align: middle !important;
+    border: 1px solid black !important;
+}
+input , button , a , textarea{
+	box-shadow: none !important;
+}
+input , textarea , select{
+    border: 1px solid black !important;
+    border-radius: 15px !important;
+    margin: 5px;
+}
+/* scroll */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: #f4f7fa;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1f272e;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #002e5b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #022154;
+}
+#m_aside_left .m-menu__link-text{
+    color: white;
+}
+#m_aside_left i{
+    color: white;
+}
+#m_header .m-stack{
+    background-color: #022154 !important;
+}
+#m_header img{
+    border: 2px solid white !important;
+}
+#m_header .m-stack__item.m-brand.m-brand--skin-dark{
+    background-color: #e8eff8 !important;
+}
+#m_header .m-stack__item.m-stack__item--middle.m-brand__tools{
+    background-color: #e8eff8 !important;
+}
+#m_header .m-stack__item.m-stack__item--middle.m-brand__logo{
+    background-color: #e8eff8 !important;
+}
+#m_header .m-brand__logo-wrapper{
+    background-color: #e8eff8 !important;
+}
+#m_header .m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler span::after{
+    background: black !important;
+    font-weight: bolder !important;
+    height: 2px;
+}
+#m_header .m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler span::before{
+    background: black !important;
+    font-weight: bolder !important;
+    height: 2px;
+}
+#m_header .m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler span{
+    background: black !important;
+    font-weight: bolder !important;
+    height: 2px;
+}
+.m-grid__item.m-grid__item--fluid.m-wrapper{
+    background-color: #e8eff8 !important;
+}
+.m-subheader__title {
+    color: black !important;
+    font-weight: bolder !important;
+}
+.m-portlet__head-text{
+    color: black !important;
+    font-weight: bolder !important;
+}
+.card.card-stats{
+    background-color: #022154 !important;
+}
+.card-footer{
+    border-top: 1px solid white !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--open{
+    background-color: #e8eff8 !important;
+    border-left: 2px solid #022154;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__heading .m-menu__link-text, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__link .m-menu__link-text{
+    color: #022154 !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__heading .m-menu__link-icon, .m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__link .m-menu__link-icon{
+    color: #022154 !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item:not(.m-menu__item--parent):not(.m-menu__item--open):not(.m-menu__item--expanded):not(.m-menu__item--active):hover{
+    background-color: #e8eff8 !important;
+    border-left: 2px solid #022154;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item:not(.m-menu__item--parent):not(.m-menu__item--open):not(.m-menu__item--expanded):not(.m-menu__item--active):hover i{
+    color: #022154 !important;
+}
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item:not(.m-menu__item--parent):not(.m-menu__item--open):not(.m-menu__item--expanded):not(.m-menu__item--active):hover .m-menu__link-text{
+    color: #022154 !important;
+}
+#can_sold{
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: 0px !important;
+    display: block !important;
+    margin: 5px !important;
+}
